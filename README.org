@@ -499,3 +499,9 @@ Org-mode is a writing tool (and *much*, *much* more), please go to the official 
 ~README.org~ is an org-mode file that users can modify to directly generate the ~init.el~ configuration.
 
 Call ~M-x org-babel-tangle RET~ in the ~README.org~ file will generate ~init.el~.
+
+* My config changes
+#+begin_src emacs-lisp :tangle init.el
+(use-package treemacs
+  :ensure t)
+#+end_src

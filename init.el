@@ -237,3 +237,6 @@ Includes all directories containing .h/.H files as -I include paths."
 
 (use-package org
   :ensure nil)
+
+(use-package treemacs
+  :ensure t)
