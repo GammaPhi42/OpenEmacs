@@ -186,7 +186,7 @@
   (eglot-managed-mode . (lambda () (eglot-inlay-hints-mode -1)));; No prompt is displayed
   :hook
   ;; NOTE: Please add your programming language here
-  ((c-mode c-ts-mode c++-mode c++-ts-mode rust-mode rust-ts-mode) . eglot-ensure)
+  ((c-mode) . eglot-ensure)
   :bind (:map eglot-mode-map
               ("C-c la" . eglot-code-actions) ;; Automatically write/repair code.
               ("C-c lr" . eglot-rename)
@@ -240,3 +240,21 @@ Includes all directories containing .h/.H files as -I include paths."
 
 (use-package treemacs
   :ensure t)
+
+(setq-default c-basic-offset 2)
+
+(use-package sr-speedbar)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(company consult deadgrep marginalia orderless sr-speedbar treemacs
+	     vertico)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

@@ -421,7 +421,7 @@ If use *consult*, When you write the code, try to run it: *consult-imenu*, *cons
   (eglot-managed-mode . (lambda () (eglot-inlay-hints-mode -1)));; No prompt is displayed
   :hook
   ;; NOTE: Please add your programming language here
-  ((c-mode c-ts-mode c++-mode c++-ts-mode rust-mode rust-ts-mode) . eglot-ensure)
+  ((c-mode) . eglot-ensure)
   :bind (:map eglot-mode-map
               ("C-c la" . eglot-code-actions) ;; Automatically write/repair code.
               ("C-c lr" . eglot-rename)
@@ -500,8 +500,21 @@ Org-mode is a writing tool (and *much*, *much* more), please go to the official 
 
 Call ~M-x org-babel-tangle RET~ in the ~README.org~ file will generate ~init.el~.
 
-* My config changes
+* My config changes. Unsure at this point about Treemacs vs Speedbar.
 #+begin_src emacs-lisp :tangle init.el
 (use-package treemacs
   :ensure t)
+#+end_src
+
+* 2 space indentation
+#+begin_src emacs-list :tangle init.el
+(setq-default c-basic-offset 2)
+#+end_src
+
+* Fix eglot/clangd auto-formatting of lines I RET on.
+See .clang-format
+
+* Use SR-Speedbar
+#+begin_src emacs-listp :tangle init.el
+(use-package sr-speedbar)
 #+end_src
